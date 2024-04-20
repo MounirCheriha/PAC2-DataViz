@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mounir Cheriha</title>
+    <title>Visualització de Dades PAC 2</title>
+    <style>
+        #imageContainer {
+            max-width: 100%; 
+        }
+        #currentImage {
+            max-width: 100%; 
+            height: auto; 
+        }
+    </style>
 </head>
 <body>
+    <h1>Mounir Cheriha</h1>
     <div id="imageContainer">
         <img id="currentImage" src="Images/000.png" alt="Image 1">
     </div>
-    <button onclick="showNextImage()">Següent Visualització</button>
+    <button onclick="showNextImage()">Next Image</button>
 
     <script>
         var images = ["Images/000.png", "Images/001.png", "Images/002.png"];
@@ -19,7 +29,7 @@
         function showNextImage() {
             currentIndex++;
             if (currentIndex >= images.length) {
-                currentIndex = 0; 
+                currentIndex = 0; // Reset to the first image if reached the end
             }
             imageElement.src = images[currentIndex];
             imageElement.alt = "Image " + (currentIndex + 1);
